@@ -24,7 +24,8 @@ module CDQ
   #
   class CDQConfig
 
-    attr_reader :config_file, :database_name, :database_dir, :model_name, :name, :icloud, :icloud_container
+    attr_reader :config_file, :database_name, :database_dir, :model_name, :name
+    attr_accessor :icloud, :icloud_container
 
     def initialize(config_file)
       h = nil

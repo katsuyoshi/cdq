@@ -12,6 +12,10 @@ module CDQ
     def stores
       @@store_manager ||= CDQStoreManager.new(model_manager: models)
     end
+    
+    def store
+      CDQStoreManager
+    end
 
     def models
       @@model_manager ||= CDQModelManager.new

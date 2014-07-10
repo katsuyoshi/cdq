@@ -7,9 +7,15 @@ module CDQ
 
     attr_writer :current
 
+#    def initialize(store_type = nil, opts = {})
     def initialize(opts = {})
       @config = opts[:config] || CDQConfig.default
-      @model_manager = opts[:model_manager]
+      
+      # icloud configuration
+      @config.icloud = opts[:icloud]
+      @config.icloud_container = opts[:container]
+      
+      @model_manager = opts[:model_manager] || CDQ.cdq.models
     end
 
     def current
